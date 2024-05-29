@@ -1,24 +1,14 @@
 import { Controller, Get, Render } from '@nestjs/common';
+import { GameService } from './game.service';
 
-@Controller()
+@Controller('games')
 export class GameController {
+  private gameService = new GameService();
   constructor() {}
 
   @Get()
-  @Render('user/index.liquid')
-  getLiquid() {
-    return {
-      message: 'Hello users!',
-      users: [
-        { name: 'Adams', age: 25 },
-        { name: 'Steven', age: 28 }
-      ]
-    };
-  }
-
-  @Get()
-  @Render('index.liquid')
-  getHello() {
-    return { message: 'Hello world!' };
+  @Render('game/index.liquid')
+  async getLiquid() {
+    return await this.gameService.get();
   }
 }

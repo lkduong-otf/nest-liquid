@@ -27,7 +27,7 @@
                 <a class="nav-link" href="\liquid">Liquid</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link" href="\games">Games</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link disabled" aria-disabled="true">Disabled</a>
@@ -37,7 +37,7 @@
         </div>
       </nav>
     </div>
-    <div class="row">{{ message }}</div>
+    <div class="row">{% block content %}My default content{% endblock %}</div>
   </div>
 </body>
 
